@@ -37,7 +37,7 @@ function twinPath(shaderPath) {
 
 function twinContent(shaderPath, text) {
   return [
-    `// GENERATED from ${relative(root, shaderPath)} by scripts/sync-shader-sources.mjs — do not edit.`,
+    `// GENERATED from ${relative(root, shaderPath).replaceAll('\\', '/')} by scripts/sync-shader-sources.mjs — do not edit.`,
     `export default ${JSON.stringify(text)};`,
     '',
   ].join('\n');
